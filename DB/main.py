@@ -11,8 +11,8 @@ if __name__ == '__main__':
 
     columns_keys = \
         [
-        "name VARCHAR(255)",
-        "address VARCHAR(255)"
+        "image VARCHAR(255)",
+        "time VARCHAR(255)"
         ]
 
     # get prompts with given keys and values to create table

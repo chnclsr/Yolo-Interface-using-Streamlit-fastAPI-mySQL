@@ -4,6 +4,7 @@ from DB.create_worker import create_worker
 from DB.tablecolumnskeygenerator import TableColumnsKeyGenerator
 from DB.settings import Settings
 import streamlit as st
+from DB.dataloader import DataLoader
 
 st.set_page_config(layout="wide")
 
@@ -26,7 +27,10 @@ def main():
     worker.drop_table_from_chosen_db()
     worker.create_specific_table_in_chosen_db(prompt4create_specific_table)
 
-    app = App(st, worker)
+    data_loader = DataLoader()
+    data_loader.getVideoLoader()
+
+    app = App(st, worker, data_loader)
     app.st.title("Object Recognition Dashboard")
     app.st.sidebar.title("Settings")
 
@@ -40,10 +44,9 @@ def main():
 
     app.st.sidebar.markdown("---")
 
-    # input src option
-    data_src = app.st.sidebar.radio("Select input source: ", ['Sample data', 'Upload your own data'])
 
-    app.video_input(data_src)
+
+    app.process_video()
 
 
 if __name__ == "__main__":
