@@ -33,7 +33,7 @@ def main():
     worker.drop_table_from_chosen_db()
 
     # wait until table is dropped
-    time.sleep(2)
+    time.sleep(3)
     worker.create_specific_table_in_chosen_db(prompt4create_specific_table)
 
     data_loader = DataLoader()
