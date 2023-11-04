@@ -56,6 +56,7 @@ class LoggingData(BaseModel):
 
 class LogAllCommand:
     def __init__(self, st, data_loader):
+        st.empty()
         self.st1, self.st2, self.st3, self.st4 = st.columns(4)
         self.LogW = LogWidthCommand(st, data_loader)
         self.LogH = LogHeightCommand(st, data_loader)
