@@ -9,23 +9,21 @@ from dataclass import *
 yoloAPI = FastAPI()
 detector = Detector()
 
+@yoloAPI.get("/")
+async def start():
+    return "YOLO_v5 based API started".encode()
+
 @yoloAPI.post("/test")
 async def test_method(data: ImageDataClass):
     img = Image.open(io.BytesIO(base64.b64decode(data.imageBase64)))
     out = detector.infer_image(img)
     return out
 
-
-@yoloAPI.get("/")
-async def start():
-    return "YOLO_v5 based API started".encode()
-
 @yoloAPI.post("/device")
 async def set_device(d: DeviceDataClass):
     if not d.device == detector.device:
         detector.device = d.device
         detector.model2device()
-
     response = {"device": detector.device}
     return response
 

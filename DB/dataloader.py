@@ -7,7 +7,7 @@ class DataLoader:
         self.width  = None
         self.height = None
 
-    def getVideoLoader(self):
+    def set_video_loader(self):
         self.VC = cv2.VideoCapture(self.vid_file)
         self.width = int(self.VC.get(cv2.CAP_PROP_FRAME_WIDTH))
         self.height = int(self.VC.get(cv2.CAP_PROP_FRAME_HEIGHT))
