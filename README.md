@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 ## Usage
 To use the Object Recognition Dashboard, follow these instructions:
-- Start YOLO API according to README.md in ./API
+- Start [YOLO API](https://github.com/autoM-coder/Yolo-Interface-using-Streamlit-fastAPI-mySQL/blob/main/API/README.md)
 - Start the dashboard by running the main script:
 
 - ```bash
