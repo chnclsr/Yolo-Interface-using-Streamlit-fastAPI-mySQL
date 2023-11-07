@@ -28,3 +28,16 @@ To use the Object Recognition Dashboard, follow these instructions:
 - The dashboard will start processing video streams and performing object recognition.
 
 
+## Start with bash 
+
+```bash
+chmod 777 start.sh
+./start.sh
+```
+
+## Docker Usage
+
+```bash
+docker build -t yolo-interface-using-streamlit .
+docker run -it --network host --name yolo_container_id_0 yolo-interface-using-streamlit 
+```
