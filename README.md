@@ -39,5 +39,7 @@ chmod 777 start.sh
 
 ```bash
 docker build -t yolo-interface-using-streamlit .
-docker run -it --network host --name yolo_container_id_0 yolo-interface-using-streamlit 
+docker run -it --network host --name yolo_container_id_0 yolo-interface-using-streamlit bash
+python ./API/yolo_fastapi.py
+python -m streamlit run main.py
 ```

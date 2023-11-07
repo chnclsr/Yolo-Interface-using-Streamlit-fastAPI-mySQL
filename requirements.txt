@@ -28,3 +28,4 @@ wget
 fastapi
 uvicorn[standard]
 opencv-python
+mysql-connector-python
